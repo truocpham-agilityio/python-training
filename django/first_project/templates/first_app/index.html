@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Django Guitar Page</title>
+</head>
+<body>
+    <h1>Hi, this is a pic of Django himself!</h1>
+    <img src="{% static 'first_app/images/django_guitar.jpg' %}" alt="Uh Oh,didn't show!">
+    <table style="width:100%; text-align:center">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Tv Show</th>
+                <th>IMDb Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tv_show,IMDb_rating in tv_shows.items %}
+            {% if IMDb_rating == "8.5" %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{tv_show}}</td>
+                <td>{{IMDb_rating}}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
