@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends "first_app/base.html" %}
+
+{% block title %}Search Form{% endblock %}
+
+{% block content %}
+Data: {{data}}
+<br>
+Text: {{text}}
+<br>
+<form method="GET" action="https://google.com ">
+    {{form}}
+    <input type="submit" value="Search">
+</form>
+{% endblock %}
